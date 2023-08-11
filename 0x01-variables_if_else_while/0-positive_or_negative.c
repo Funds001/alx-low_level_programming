@@ -4,32 +4,34 @@
 
 /**
  * main - Entry point
- *
- * This program generates a random number and prints whether it's positive, zero, or negative.
- *
- * Return: Always 0 (Success)
+ * Description: A program that assigns a random number.
+ * Return: Always return 0 (success)
  */
+
 int main(void)
 {
 	int n;
 
+	/* Seed the random number generator with the current sys time.*/
 	srand(time(0));
+
+	/* Genrate a random number between 0 and RAND_MAX */
 	n = rand() - RAND_MAX / 2;
 
-	printf("%d ", n);
-
 	if (n > 0)
-	{
-		printf("is positive\n");
-	}
-	else if (n == 0)
-	{
-		printf("is zero\n");
-	}
-	else
-	{
-		printf("is negative\n");
-	}
+{
+	printf("%d is positive\n", n);
+}
+
+	if (n == 0)
+{
+	printf("%d is zero\n", n);
+}
+	if (n < 0)
+{
+	printf("%d is negative\n", n);
+}
 
 	return (0);
+
 }
